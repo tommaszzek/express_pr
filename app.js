@@ -5,7 +5,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var config=require('./config');
+const mongoose = require('mongoose');
 
+var db=mongoose.connect(config.db);
+db.catch(err => console.log(err));
 
 var indexRouter = require('./routes/index');
 var newsRouter = require('./routes/news');

@@ -1,6 +1,7 @@
 const express = require('express');
-const { NotExtended } = require('http-errors');
 const router = express.Router();
+const News = require('../models/news');
+
 
 /* GET home page. */
 router.all("*",(req,res,next)=>{
@@ -13,8 +14,20 @@ router.all("*",(req,res,next)=>{
 });
 
 router.get('/', function(req, res) {
-  console.log(req.session.admin);
-  res.render('admin', { title: 'Admin'});
+  // const newsDta=new News({
+  //   title:"Testowy",
+  //   desc:'Opis',
+  // });
+
+  // newsDta.save((err)=>{
+  //   console.log(err);
+  // })
+
+  res.render('admin/index', { title: 'Admin'});
+
+
 });
+
+
 
 module.exports = router;
