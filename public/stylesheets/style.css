@@ -5,4 +5,10 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+.active {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
